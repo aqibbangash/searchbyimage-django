@@ -1,0 +1,55 @@
+{% load static from staticfiles %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  </head>
+  <body>
+{#  container begins  #}
+    <div class="container">
+{#        nav bar  #}
+{#        nav bar ends#}
+{#        add to Inventory sect#}
+        <div class="row mx-auto col-sm-8 pt-5 ">
+            <button type="button" class="btn btn-success btn-lg mx-auto" id="conf"  onclick="document.getElementById('fileinput').click()">
+                Search Product
+            </button>
+            <form enctype="multipart/form-data" id="invform" method="POST" action="">
+            <input class="pl-5 mx-auto" id="fileinput" type="file" accept="image/*;capture=camera">
+            </form>
+        </div>
+{#        add to Inventory sec ends#}
+{#        current Inventory sec#}
+        <div class="row pt-5 justify-content-center currinv">
+            <div class="col-sm-6 my-auto">
+                <h2 class="diplay-3 alert alert-info">Search By Image</h>
+            </div>
+            <div class="col-sm-1 my-auto">
+                <a class="btn btn-primary" role="button" href="{% url 'recommendations'  %}">Go!</a>
+            </div>
+
+        </div>
+        <div class="row pt-5" id="inventory">
+
+        </div>
+{#        current Inventory sec ends#}
+
+
+    </div>
+{#container ends #}
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{% static 'js/home.js' %}"></script>
+  </body>
+</html>
